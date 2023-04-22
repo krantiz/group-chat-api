@@ -5,19 +5,9 @@ const path = require("path");
 const DataTypes = require("sequelize");
 const process = require("process");
 const basename = path.basename(__filename);
-// const env = process.env.NODE_ENV || "development";
-// const config = require(__dirname + "/../config/config.json")[env];
 const db = {};
 
 let sequelize;
-// console.log('process.env[config.use_env_variable]', process.env[config.use_env_variable])
-// console.log('config', config)
-// console.log('config.use_env_variable', config.use_env_variable)
-// if (config.use_env_variable) {
-//   sequelize = new DataTypes(process.env[config.use_env_variable], config);
-// } else {
-//   sequelize = new DataTypes(config.database, config.username, config.password, config);
-// }
 
 const db_connection_config = {
   username: process.env.MYSQL_DB_USERNAME,

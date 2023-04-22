@@ -45,15 +45,12 @@ const userController = {
 
   login: async (req, res) => {
     const { email, password } = req.body;
-    console.log(email, password);
     try {
       const user = await User.findOne({ where: { email } });
-      console.log("user", user);
       if (!user) {
         res.status(401).json({ message: "Invalid email or password" });
       } else {
         const isMatch = await bcrypt.compare(password, user.password);
-        console.log("isMatch", isMatch);
 
         if (!isMatch) {
           res.status(401).json({ message: "Invalid email or password" });

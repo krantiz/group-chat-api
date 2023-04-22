@@ -20,7 +20,7 @@ db.sequelize
   .sync
   // { alter: true } // Alter if Any changes..
   // { force: true } // drop the table if it already exists
-  ({ force: true })
+  ()
   .then(() => {
     console.log("Synced db.");
   })
@@ -59,3 +59,5 @@ app.use(
   authenticateNormalUser,
   commonRouter
 );
+
+module.exports = app;
