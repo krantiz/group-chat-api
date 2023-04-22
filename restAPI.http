@@ -1,0 +1,79 @@
+### Welcome Page
+http://localhost:8080/
+
+### Login User
+POST http://localhost:8080/api/user/login
+content-type: application/json
+
+{
+    "email": "Avyan@gmail.com",
+    "password": "password"
+}
+
+### Create User
+POST http://localhost:8080/api/admin/users
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4MjE0Mzc1OH0.DEY6tp6mwiJk0i1nocUN2feVyqvmbImn0M4XhNTcmfA
+
+{
+    "email": "Avyan@gmail.com",
+    "name": "Avyan",
+    "password":"password",
+    "isAdmin": 0
+}
+
+### Update User
+PUT http://localhost:8080/api/admin/users/4
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4MjE0Mzc1OH0.DEY6tp6mwiJk0i1nocUN2feVyqvmbImn0M4XhNTcmfA
+
+{
+    "email": "Avyan@gmail.com",
+    "name": "Avyan123",
+    "password":"password",
+    "isAdmin": 0
+}
+
+
+### Create Group
+POST  http://localhost:8080/api/groups
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2ODIxNDM5NDZ9.I9vj5nbO_SZmMrVyfB_ULcYI4vKSqNXzRnQHl2uvbLo
+
+{
+  "name": "My Group2",
+  "description": "This is a test group"
+}
+
+### Delete Group
+DELETE http://localhost:8080/api/groups/2
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2ODIxNDM5NDZ9.I9vj5nbO_SZmMrVyfB_ULcYI4vKSqNXzRnQHl2uvbLo
+
+### Search Group
+GET http://localhost:8080/api/groups?q=Group
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2ODIxNDM5NDZ9.I9vj5nbO_SZmMrVyfB_ULcYI4vKSqNXzRnQHl2uvbLo
+
+### Add Members to Group
+POST http://localhost:8080/api/groups/1/members
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2ODIxNDM5NDZ9.I9vj5nbO_SZmMrVyfB_ULcYI4vKSqNXzRnQHl2uvbLo
+
+{
+  "userIds": [1, 3]
+}
+
+### Send message in group.
+POST http://localhost:8080/api/groups/1/messages
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2ODIxNDM5NDZ9.I9vj5nbO_SZmMrVyfB_ULcYI4vKSqNXzRnQHl2uvbLo
+
+{
+  "content": "Hello worldfafashfsdhfahdsf"
+}
+
+### Like any particular message.
+POST http://localhost:8080/api/messages/2/like
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4MjE0Mzc1OH0.DEY6tp6mwiJk0i1nocUN2feVyqvmbImn0M4XhNTcmfA
