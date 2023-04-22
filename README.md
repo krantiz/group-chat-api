@@ -13,7 +13,7 @@ This is a node + express + mysql based backend server
 
 * Clone the project from git.
 * Run the command ` npm install ` to install all the dependencies.
-* Create Database and add credentials in .env file of the project.
+* Create Database and add credentials in  `.env` and `config/config.json` file of the project.
 ```
 MYSQL_DB_USERNAME="root"
 MYSQL_DB_PASSWORD="root"
