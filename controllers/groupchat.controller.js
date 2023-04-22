@@ -23,7 +23,7 @@ const groupChatController = {
         return res.status(404).json({ message: "Group not found" });
       }
       await group.destroy();
-      res.sendStatus(204);
+      res.sendStatus(200);
     } catch (err) {
       console.error(err);
       res.status(500).json({ message: "Server error" });
@@ -54,7 +54,7 @@ const groupChatController = {
       }
       const { userIds } = req.body;
       await group.addUsers(userIds);
-      res.sendStatus(204);
+      res.sendStatus(201);
     } catch (err) {
       console.error(err);
       res.status(500).json({ message: "Server error" });
@@ -90,7 +90,7 @@ const groupChatController = {
         return res.status(404).json({ message: "Message not found" });
       }
       await message.increment("likes");
-      res.json({ message: "Like count incremented" });
+      res.status(201).json({ message: "Like count incremented" });
     } catch (err) {
       console.error(err);
       res.status(500).json({ message: "Server error" });

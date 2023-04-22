@@ -15,12 +15,13 @@ const db_connection_config = {
   database: process.env.MYSQL_DB_NAME,
   host: process.env.MYSQL_DB_HOST,
   dialect: "mysql",
+  logging: false
 };
 sequelize = new DataTypes(
   process.env.MYSQL_DB_NAME,
   process.env.MYSQL_DB_USERNAME,
   process.env.MYSQL_DB_PASSWORD,
-  db_connection_config
+  db_connection_config,
 );
 
 fs.readdirSync(__dirname)

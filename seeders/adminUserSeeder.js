@@ -12,6 +12,12 @@ module.exports = {
         password: hashedPassword,
         isAdmin: true,
       },
+      {
+        name: "NormalUser",
+        email: "normaluser@example.com",
+        password: hashedPassword,
+        isAdmin: false,
+      },
     ]);
   },
 
